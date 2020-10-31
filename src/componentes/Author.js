@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Gravatar } from 'react-native-gravatar'
 
-//esse é um componete funcional 
+//esse é um componete funcional só um comenteario
 export default props => {
     return(
         <View style={styles.container} >
