@@ -1,48 +1,17 @@
 import React from 'react'
-import { createBottomTabNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/FontAwesome'
-
-import 'react-native-gesture-handler'
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { NavigationContainer } from '@react-navigation/native'
 import Feed from './screens/Feed'
 
-const MenuRoutes = {
-    Feed:{
-        name: 'Feed',
-        screen: Feed,
-        navigationOptions:{
-            title: 'Feed',
-            tabBarIcon: ( { tintColor } ) => 
-                <Icon name='home' size={30} color={tintColor} />
-        }
-    },
-    Add:{
-        name: 'AddPhoto',
-        screen: Feed,
-        navigationOptions:{
-            title: 'Add Picture',
-            tabBarIcon: ( { tintColor } ) => 
-                <Icon name='camera' size={30} color={tintColor} />
-        }
-    },
-    Profile:{
-        name: 'Profile',
-        screen: Feed,
-        navigationOptions:{
-            title: 'Profile',
-            tabBarIcon: ( { tintColor } ) => 
-                <Icon name='user' size={30} color={tintColor} />
-        }
-    }
+const Tab = createBottomTabNavigator()
+
+export default function MyTabs() {
+    return (
+        <NavigationContainer>
+            <Tab.Navigator>
+                <Tab.Screen name="Home" component={Feed} />
+                <Tab.Screen name="Settings" component={Feed} />
+            </Tab.Navigator>
+        </NavigationContainer>
+    )
 }
-
-const MenuConfig = {
-    initialRouteName: 'Feed',
-    tabBarOptions: {
-        showLabel: false,
-    }
-}
-
-const MenuNavigator = createBottomTabNavigator(MenuRoutes, MenuConfig)
-
-export default MenuNavigator
