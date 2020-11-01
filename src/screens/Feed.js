@@ -21,8 +21,20 @@ class Feed extends Component {
             id: Math.random(),
             nickname: 'Jorge Jesus',
             email: 'jj@gmail.com',
-            image: require('../../assets/imgs/bw.jpg'),
+            image: require('../../assets/imgs/jorgejesus.jpeg'),
             comments:[]
+        },{
+            id: Math.random(),
+            nickname: 'Michael',
+            email: 'micha@gmail.com',
+            image: require('../../assets/imgs/Michael.jpg'),
+            comments: [{
+                nickname: 'Pedro',
+                comment: 'Boa!'
+            },{
+                nickname: 'Everton Ribeiro',
+                comment: 'Meu garoto'
+            },]
         }]
     }
 
