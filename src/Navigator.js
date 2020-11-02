@@ -2,6 +2,7 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import Feed from './screens/Feed'
+import AddPhoto from './screens/AddPhoto'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const Tab = createBottomTabNavigator()
@@ -20,7 +21,7 @@ export default function MyTabs() {
                 />
                 <Tab.Screen
                     name="Camera"
-                    component={Feed}
+                    component={AddPhoto}
                     options={{
                         tabBarIcon: ({ tintColor }) =>
                             <Icon name='camera' size={30} color={tintColor} />
