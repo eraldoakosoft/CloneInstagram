@@ -17,7 +17,7 @@ class Login extends Component {
         return (
             <View style={styles.container} >
                 <TextInput placeholder='Email' style={styles.input}
-                    autoFocus={true} keyboardType='email-address' 
+                    keyboardType='email-address' 
                     value={this.state.email}
                     onChangeText={ email => this.setState({ email })} />
                 <TextInput placeholder='Senha' style={styles.input} 
@@ -26,7 +26,9 @@ class Login extends Component {
                 <TouchableOpacity onPress={this.login} style={styles.buttom} >
                     <Text style={styles.buttomText} >Login</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={ () => {} } style={styles.buttom} >
+                <TouchableOpacity onPress={ () => {
+                    this.props.navigation.navigate('Register')
+                } } style={styles.buttom} >
                     <Text style={styles.buttomText} >Criar nova conta</Text>
                 </TouchableOpacity>
             </View>
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#EEE',
         height: 40,
         borderWidth: 1,
-        borderColor: '#333'
+        borderColor: '#333',
     }
 })
 

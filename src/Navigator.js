@@ -6,6 +6,7 @@ import Feed from './screens/Feed'
 import AddPhoto from './screens/AddPhoto'
 import Profile from './screens/Profile'
 import Login from './screens/Login'
+import Register from './screens/Register'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { createStackNavigator } from '@react-navigation/stack'
 
@@ -17,6 +18,7 @@ function MyStack() {
     <Stack.Navigator>
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Register" component={Register} />
     </Stack.Navigator>
   )
 }
