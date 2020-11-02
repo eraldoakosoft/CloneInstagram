@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import { Gravatar } from 'react-native-gravatar'
+import { createStackNavigator } from 'react-navigation'
+import Login from './Login'
 
 class Profile extends Component {
     logout = () => {
-
+        this.props.navigation.navigate('Login')
     }
 
     render(){

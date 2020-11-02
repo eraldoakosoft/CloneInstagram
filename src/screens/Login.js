@@ -9,7 +9,7 @@ class Login extends Component {
 
 
     login = () => {
-        this.props.navigation.navigator('Profile')
+        this.props.navigation.navigate('Profile')
     }
 
 
