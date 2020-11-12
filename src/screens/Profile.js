@@ -11,12 +11,12 @@ class Profile extends Component {
     }
 
     render(){
-        const options = { email: this.props.email, secure: true }
+        const options = { email: this.props.user.email, secure: true }
         return (
             <View style={styles.container} >
                 <Gravatar options={options} style={styles.avatar} />
-                <Text style={styles.nickname} >{this.props.name}</Text>
-                <Text style={styles.email} >{this.props.email}</Text>
+                <Text style={styles.nickname} >{this.props.user.name}</Text>
+                <Text style={styles.email} >{this.props.user.email}</Text>
                 <TouchableOpacity onPress={this.logout} style={styles.buttom} >
                     <Text style={styles.buttomText} >Sair</Text>
                 </TouchableOpacity>
