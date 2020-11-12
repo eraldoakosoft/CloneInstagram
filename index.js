@@ -7,10 +7,10 @@ import {name as appName} from './app.json'
 import storeConfig from './src/store/storeConfig'
 
 const store = storeConfig()
-const Redux = () => {
+const Redux = () => (
     <Provider store={store} >
         <MyTabs/>
     </Provider>
-}
+)
 
 AppRegistry.registerComponent(appName, () => Redux)
