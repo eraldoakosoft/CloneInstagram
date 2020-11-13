@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, Platform, ScrollView, Alert } from 'react-native'
 import ImagePicker from 'react-native-image-picker'
+import { connect } from 'react-redux'
+import { addPost} from '../store/actions/posts'
 
 class AddPhoto extends Component {
     state = {
@@ -23,7 +25,19 @@ class AddPhoto extends Component {
 
 
     save = async () => {
-        Alert.alert('Imagem adicionada!', this.state.comment)
+        this.props.onAddPost({
+            id: Math.random(),
+            nicname: this.props.name,
+            email: this.props.email,
+            image: this.state.image,
+            comments: [{
+                nicname: this.props.name,
+                comment: this.state.comment
+            }]
+        })
+
+        this.setState({ image: null, comment: '' })
+        this.props.navigation.navigate('Home')
     }
 
     render(){
@@ -86,4 +100,19 @@ const styles = StyleSheet.create({
     }
 })
 
-export default AddPhoto
+//export default AddPhoto
+
+const mapStateToProps = ( { user } ) => {
+    return {
+        email: user.email,
+        name: user.name,
+    }
+}
+
+const maoDispatchToProps = dispatch => {
+    return {
+        onAddPost: post => dispatch(addPost(post))
+    }
+}
+
+export default connect(mapStateToProps, maoDispatchToProps)(AddPhoto)
